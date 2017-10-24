@@ -25,4 +25,16 @@
         android:layout_height="wrap_content"
         android:text="取不到货"/>
 
+    <Button
+        android:id="@+id/dispatching_package"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="配送中"/>
+
+    <Button
+        android:id="@+id/dispatched_package"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="已送达"/>
+
 </LinearLayout>

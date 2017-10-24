@@ -16,6 +16,9 @@ public class PackageState extends AppCompatActivity implements View.OnClickListe
     private Button wait_package_btn;
     private Button get_package_btn;
     private Button unget_package_btn;
+    private Button dispatching_package_btn;
+    private Button dispatched_package_btn;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -26,10 +29,14 @@ public class PackageState extends AppCompatActivity implements View.OnClickListe
         wait_package_btn = (Button) findViewById(R.id.wait_package);
         get_package_btn = (Button) findViewById(R.id.get_package);
         unget_package_btn = (Button) findViewById(R.id.unget_package);
+        dispatching_package_btn = (Button) findViewById(R.id.dispatching_package);
+        dispatched_package_btn = (Button) findViewById(R.id.dispatched_package);
 
         wait_package_btn.setOnClickListener(this);
         get_package_btn.setOnClickListener(this);
         unget_package_btn.setOnClickListener(this);
+        dispatching_package_btn.setOnClickListener(this);
+        dispatched_package_btn.setOnClickListener(this);
     }
 
     @Override
@@ -52,6 +59,12 @@ public class PackageState extends AppCompatActivity implements View.OnClickListe
                 break;
             case R.id.unget_package:
                 navigateToAnotherActivity(smsaddress,2);
+                break;
+            case R.id.dispatching_package:
+                navigateToAnotherActivity(smsaddress,3);
+                break;
+            case R.id.dispatched_package:
+                navigateToAnotherActivity(smsaddress,4);
                 break;
             default:
                 break;
