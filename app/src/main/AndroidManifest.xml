@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.qingqiserverapp">
+
     <uses-permission android:name="android.permission.INTERNET" />
 
     <application
@@ -18,9 +19,10 @@
             </intent-filter>
         </activity>
         <activity android:name=".activity.SmsSquare" />
-        <activity android:name=".activity.PackageState" />
+        <activity android:name=".activity.PackageState"
+            android:launchMode="singleTask"/>
         <activity android:name=".activity.AllEIofOneStateandSmsaddress" />
-        <activity android:name=".activity.SingleEI"></activity>
+        <activity android:name=".activity.Single_EI_Info"></activity>
     </application>
 
 </manifest>

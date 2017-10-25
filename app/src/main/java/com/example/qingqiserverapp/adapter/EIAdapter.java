@@ -1,12 +1,15 @@
 package com.example.qingqiserverapp.adapter;
 
+import android.content.Intent;
 import android.support.v7.widget.RecyclerView;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
 import com.example.qingqiserverapp.R;
+import com.example.qingqiserverapp.activity.Single_EI_Info;
 import com.example.qingqiserverapp.entity.EI;
 
 import java.util.List;
@@ -17,7 +20,7 @@ import java.util.List;
 
 public class EIAdapter extends RecyclerView.Adapter<EIAdapter.ViewHolder> {
 
-    private List<EI> eiList;
+    private  List<EI> eiList;
 
     public EIAdapter(List<EI> eiList) {
         this.eiList = eiList;
@@ -26,8 +29,23 @@ public class EIAdapter extends RecyclerView.Adapter<EIAdapter.ViewHolder> {
     @Override
     public ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
         View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.all_ei_single_item, parent, false);
-        EIAdapter.ViewHolder viewHolder = new ViewHolder(view);
-        return viewHolder;
+
+        //设置点击事件
+        final EIAdapter.ViewHolder holder = new ViewHolder(view);
+        holder.view.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                int position = holder.getAdapterPosition();
+                EI ei = eiList.get(position);
+                //下面开始跳转到单个详细信息页面，注意要传递id
+                Intent intent = new Intent(view.getContext(), Single_EI_Info.class);
+                intent.putExtra("id", ei.getId());
+                Log.e("EIAdapter", ei.getId().toString());
+
+                view.getContext().startActivity(intent);
+            }
+        });
+        return holder;
     }
 
     @Override
@@ -43,12 +61,13 @@ public class EIAdapter extends RecyclerView.Adapter<EIAdapter.ViewHolder> {
     }
 
     static class ViewHolder extends RecyclerView.ViewHolder {
-
+        View view;
         TextView awb_text;
         TextView name_text;
 
-        public ViewHolder(View itemView) {
+        public ViewHolder(final View itemView) {
             super(itemView);
+            view = itemView;
             this.awb_text = itemView.findViewById(R.id.awb);
             this.name_text = itemView.findViewById(R.id.name);
         }

@@ -25,7 +25,7 @@ import okhttp3.Response;
 
 public class AllEIofOneStateandSmsaddress extends AppCompatActivity {
 
-    private List<EI> eiList = new ArrayList<>();
+    public List<EI> eiList = new ArrayList<>();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
