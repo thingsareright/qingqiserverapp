@@ -28,7 +28,7 @@ public class SmsSquare extends AppCompatActivity {
         smsAddressList.add(8,"菊园二号楼前台");
         smsAddressList.add(9,"京东快递");
         smsAddressList.add(10,"菊园五号楼自助一区");
-        smsAddressList.add(11,"菊园五号楼自助一区");
+        smsAddressList.add(11,"菊园五号楼自助二区");
         smsAddressList.add(12,"菊园五号楼分拣区");
         smsAddressList.add(13,"荷园洗浴中心二楼");
         smsAddressList.add(14,"其它");

@@ -1,27 +1,75 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:orientation="vertical"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context="com.example.qingqiserverapp.MainActivity">
 
-    <TextView
+    <ImageView
+        android:id="@+id/background_img"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="欢迎使用轻骑快送服务端！"/>
+        android:layout_height="match_parent"
+        android:scaleType="fitXY"/>
 
-    <EditText
-        android:id="@+id/token"
+    <LinearLayout
+        android:layout_centerInParent="true"
+        android:orientation="vertical"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:hint="请输入验证口令"/>
+        android:layout_height="match_parent">
 
-    <Button
-        android:id="@+id/submmit"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="提交"/>
+        <!-- 空的布局控件，用于稍微美化下界面 -->
+        <TextView
+            android:id="@+id/view1"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="3"/>
 
-</LinearLayout>
+        <TextView
+            android:id="@+id/view2"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="4"
+            android:textSize="25dp"
+            android:textColor="#ae11"
+            android:layout_below="@id/view1"
+            android:layout_margin="20dp"
+            android:text="欢迎使用轻骑快送服务端！"/>
+
+
+
+        <EditText
+            android:id="@+id/token"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="2"
+            android:layout_below="@id/view2"
+            android:hint="请输入验证口令"/>
+
+
+
+        <RelativeLayout
+            android:id="@+id/view3"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="2"
+            android:layout_below="@id/token">
+            <Button
+                android:id="@+id/submmit"
+                android:layout_width="wrap_content"
+                android:layout_centerInParent="true"
+                android:text="提交"
+                android:layout_height="match_parent" />
+        </RelativeLayout>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_below="@id/view3"
+            android:layout_weight="5"/>
+
+    </LinearLayout>
+
+
+
+</RelativeLayout>

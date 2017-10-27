@@ -33,7 +33,7 @@ public class SmsAddressAdapter extends RecyclerView.Adapter<SmsAddressAdapter.Vi
         View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.smsaddress_item, parent, false);
         final ViewHolder holder = new ViewHolder(view);
         //设置recyclerview的每项点击事件
-        holder.textView.setOnClickListener(new View.OnClickListener() {
+        holder.smsView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 int position = holder.getAdapterPosition();

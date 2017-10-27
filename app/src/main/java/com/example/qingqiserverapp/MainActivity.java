@@ -7,8 +7,10 @@ import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageView;
 import android.widget.Toast;
 
+import com.bumptech.glide.Glide;
 import com.example.qingqiserverapp.activity.SmsSquare;
 import com.example.qingqiserverapp.utils.Constant;
 import com.example.qingqiserverapp.utils.JsonUtils;
@@ -21,11 +23,15 @@ import okhttp3.OkHttpClient;
 import okhttp3.Request;
 import okhttp3.Response;
 
+/**
+ * 思虑再三，我还是决定引入Glide这个第三方库
+ */
 public class MainActivity extends AppCompatActivity implements View.OnClickListener{
 
     //下面开始定义各组件
     private EditText token_edit;
     private Button submmit_btn;
+    private ImageView background_img;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -36,6 +42,9 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         token_edit = (EditText) findViewById(R.id.token);
         submmit_btn = (Button) findViewById(R.id.submmit);
         submmit_btn.setOnClickListener(this);
+        background_img = (ImageView) findViewById(R.id.background_img);
+        //使用Glide加载本地图片作为背景图片
+        Glide.with(this).load(R.drawable.info).into(background_img);
 
         //要先对加密开源库进行初始化
         try {
